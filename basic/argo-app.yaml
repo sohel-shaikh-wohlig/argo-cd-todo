@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nginx
+  namespace: argo-demo
+spec:
+  destination:
+    namespace: argo-demo
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: basic
+    repoURL: https://github.com/sohel-shaikh-wohlig/argocd-app
+    targetRevision: minikube
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: false
+    syncOptions:
+    - CreateNamespace=true

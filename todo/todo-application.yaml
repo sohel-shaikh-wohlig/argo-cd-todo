@@ -11,7 +11,7 @@ spec:
   source:
     path: todo
     repoURL: https://github.com/sohel-shaikh-wohlig/argocd-app
-    targetRevision: main
+    targetRevision: HEAD
   syncPolicy:
     automated:
       prune: true
